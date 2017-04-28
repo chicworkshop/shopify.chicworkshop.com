@@ -233,7 +233,7 @@ p.separator {
 }
 
 #separator1 .bg2 {
-	background: url(../images/bg5-min.jpg) repeat 0 0 fixed;
+	background: url(../images/bg6-min.jpg) repeat 0 0 fixed;
 	margin: 0 auto;
 	padding: 0;
 	position: absolute;
@@ -249,7 +249,7 @@ p.separator {
 }
 
 #separator2 .bg3 {
-	background: url(../images/bg6.jpg) repeat 0 0 fixed;
+	background: url(../images/bg6-min.jpg) repeat 0 0 fixed;
 	margin: 0 auto;
 	padding: 0;
 	position: absolute;
@@ -265,7 +265,7 @@ p.separator {
 }
 
 #separator3 .bg4 {
-	background: url(../images/bg6.jpg) repeat 0 0 fixed;
+	background: url(../images/bg6-min.jpg) repeat 0 0 fixed;
 	margin: 0 auto;
 	padding: 0;
 	position: absolute;
@@ -334,7 +334,7 @@ nav a:hover {
 }
 
 #intro .bg1 {
-	background: url(../images/bg6.jpg) 0 0 repeat fixed;	
+	background: url(../images/bg5-min.jpg) 0 0 repeat fixed;	
 	margin: 0 auto;
 	padding: 0;
 	position: absolute;
@@ -481,7 +481,7 @@ p.proj-desc {
 }
 
 p.p-name {
-	background: url(../images/price-name-bg.jpg) repeat;
+	background: url(../images/price-name-bg-min.jpg) repeat;
 	font-size: 22px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -491,7 +491,7 @@ p.p-name {
 }
 
 p.p-price {
-	background: url(../images/price-bg.jpg) repeat;
+	background: url(../images/price-bg-min.jpg) repeat;
 	font-size: 28px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -506,7 +506,7 @@ span.p-small {
 }
 
 .pricing ul {
-	background: url(../images/price-feat-bg.jpg) repeat;
+	background: url(../images/price-feat-bg-min.jpg) repeat;
 	margin: 0;
 }
 
@@ -529,7 +529,7 @@ span.p-small {
 }
 
 .signup {
-	background: url(../images/price-bg.jpg) repeat;
+	background: url(../images/price-bg-min.jpg) repeat;
 }
 
 
@@ -648,7 +648,7 @@ p.t-type {
 ================================================== */
 
 #contact {
-	background: url(../images/bg-dark.jpg) repeat;
+	background: url(../images/bg-dark-min.jpg) repeat;
 	position: relative;
 	z-index: 300;
 	padding-top: 20px;
@@ -683,7 +683,7 @@ p.t-type {
 }
 
 .contact-form input {
-	background: url(../images/cont-form-bg.jpg) repeat;
+	background: url(../images/cont-form-bg-min.jpg) repeat;
 	width: 98%;
 	height: 28px;
 	margin-bottom: 10px;
@@ -696,7 +696,7 @@ p.t-type {
 }
 
 .contact-form textarea {
-	background: url(../images/cont-form-bg.jpg) repeat;
+	background: url(../images/cont-form-bg-min.jpg) repeat;
 	margin-bottom: 10px;
 	padding-left: 5px;
 	font-family: 'Source Sans Pro', sans-serif;
