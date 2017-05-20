@@ -27,13 +27,14 @@
 ================================================== */
 
 h1, h2, h3 {
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: normal;
 }
 
 h1 {
 	color: #fff;
 	font-size: 120px;
-	font-weight: 700;
+	font-weight: normal;
 	text-transform: uppercase;
 	position: relative;
 	z-index: 150;
@@ -41,19 +42,18 @@ h1 {
 }
 
 h1.small {
-	font-size: 90px;
-	margin-bottom: 40px;
+	font-size: 36px;
+	margin-bottom: 0;
 }
 
 h2 {
-	font-size: 60px;
-	line-height: 60px;
-	font-weight: 700;
-	color: #434343;
+	font-size: 28px;
+	font-weight: normal;
+	color: #656565;
 	text-transform: uppercase;
 	text-align: center;
 	margin-top: 90px;
-	margin-bottom: 80px;
+	margin-bottom: 20px;
 }
 
 h2.white {
@@ -66,10 +66,10 @@ span.lines {
 }
 
 h3 {
-	font-size: 30px;
+	font-size: 22px;
 	text-transform: uppercase;
-	font-weight: 600;
-	color: #434343;
+	font-weight: normal;
+	color: #656565;
 }
 
 h3.white {
@@ -77,27 +77,27 @@ h3.white {
 }
 
 h4 {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 36px;
-	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;;
+	font-size: 20px;
+	font-weight: normal;
 	color: #fff;
 	text-transform: uppercase;
 }
 
 h5 {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 24px;
-	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;;
+	font-size: 16px;
+	font-weight: normal;
 	text-transform: uppercase;
 	color: #fff;
 }
 
 p {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Open Sans', sans-serif;;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 23px;
-	color: #3d3d3d;
+	color: #656565;
 }
 
 p.white {
@@ -120,7 +120,7 @@ p.white a:hover{
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-	background: #3a3a3a;
+	background: #929291;
 	border: 0;
 	color: #fff;
 	display: inline-block;
@@ -132,15 +132,15 @@ input[type="button"] {
 	margin-bottom: 20px;
 	line-height: normal;
 	padding: 6px 10px;
-	font-family: 'Source Sans Pro', sans-serif; 
+	font-family: 'Open Sans', sans-serif;; 
 }
 
 .button1:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-	color: #3a3a3a;
-	background: #e8e8e8;
+	color: #fff;
+	background: #abcb00;
 	border: 0; 
 }
 
@@ -155,9 +155,9 @@ input[type="button"]:active {
 }
 
 .button2 {
-	background: #e8e8e8;
+	background: #929291;
 	border: 0;
-	color: #3a3a3a;
+	color: #fff;
 	display: inline-block;
 	font-size: 15px;
 	font-weight: 400;
@@ -166,12 +166,12 @@ input[type="button"]:active {
 	cursor: pointer;
 	line-height: normal;
 	padding: 6px 10px;
-	font-family: 'Source Sans Pro', sans-serif; 
+	font-family: 'Open Sans', sans-serif;; 
 }
 
 .button2:hover {
-	color: #e8e8e8;
-	background: #3a3a3a;
+	color: #fff;
+	background: #abcb00;
 	border: 0; 
 }
 
@@ -306,7 +306,7 @@ nav ul li:first-child {
 }
 
 nav a {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Open Sans', sans-serif;;
 	font-size: 16px;
 	color: #515151;
 	font-weight: 300;
@@ -319,10 +319,15 @@ nav a:visited {
 }
 
 nav a:hover {
-	color: #000;
+	color: #abcb00;
 }
 
+/* Logo
+================================================== */
 
+#logo {
+	paddding-top: 40px;
+}
 
 /* #Intro
 ================================================== */
@@ -354,13 +359,13 @@ nav a:hover {
 .intro-line {
 	position: relative;
 	z-index: 150;
-	border-top: 1px solid #ededed;
+	border-top: none;
 	width: 670px;
-	margin: 0 auto 50px auto;
+	margin: 0 auto 100px auto;
 }
 
 .title p {
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 30px;
 	color: #fff;
 	position: relative;
@@ -481,23 +486,23 @@ p.proj-desc {
 }
 
 p.p-name {
-	background: url(../images/price-name-bg-min.jpg) repeat;
+	background: #f9fafa;
 	font-size: 22px;
 	font-weight: 600;
 	text-transform: uppercase;
 	padding: 12px 0 8px 0;
 	margin: 0;
-	color: #fff;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 p.p-price {
-	background: url(../images/price-bg-min.jpg) repeat;
+	background: #f9fafa;
 	font-size: 28px;
 	font-weight: 600;
 	text-transform: uppercase;
-	color: #fff;
 	padding: 20px 0 16px 0;
 	margin: 0;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 span.p-small {
@@ -506,15 +511,14 @@ span.p-small {
 }
 
 .pricing ul {
-	background: url(../images/price-feat-bg-min.jpg) repeat;
+	background: #f9fafa;
 	margin: 0;
 }
 
 .pricing ul li {
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #d7d7d7;
-	border-bottom: 1px solid #333333;
+	border-bottom: 1px solid #e5e5e5;
 	padding: 10px 0;
 	margin: 0;
 }
@@ -529,7 +533,7 @@ span.p-small {
 }
 
 .signup {
-	background: url(../images/price-bg-min.jpg) repeat;
+	background: #f9fafa;
 }
 
 
@@ -660,7 +664,7 @@ p.t-type {
 /*** contact form ***/
 
 .done {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Open Sans', sans-serif;;
 	color: #fff;
 	font-size: 14px;
 	margin-bottom: 15px;
@@ -675,7 +679,7 @@ p.t-type {
 }
 
 .contact-form p {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Open Sans', sans-serif;;
 	font-size: 14px;
 	color: #fff;
 	text-transform: uppercase;
@@ -688,7 +692,7 @@ p.t-type {
 	height: 28px;
 	margin-bottom: 10px;
 	padding-left: 4px;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Open Sans', sans-serif;;
 	font-weight: 400;
 	font-size: 16px;
 	color: #fff;
@@ -699,7 +703,7 @@ p.t-type {
 	background: url(../images/cont-form-bg-min.jpg) repeat;
 	margin-bottom: 10px;
 	padding-left: 5px;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Open Sans', sans-serif;;
 	font-weight: 400;
 	font-size: 16px;
 	color: #fff;
@@ -721,7 +725,7 @@ p.t-type {
 	margin-bottom: 20px;
 	line-height: 0;
 	padding: 3px 4px 0 4px;
-	font-family: 'Source Sans Pro', sans-serif; 
+	font-family: 'Open Sans', sans-serif;; 
 	width: 60px;
 	height: 24px;
 }
@@ -801,10 +805,7 @@ p.t-type {
 			font-size: 100px;
 			margin-bottom: 60px;
 		}
-		h1.small {
-			font-size: 80px;
-			margin-bottom: 20px;
-		}
+
 		
 	}
 
