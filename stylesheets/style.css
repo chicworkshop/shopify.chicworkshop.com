@@ -56,7 +56,7 @@
 ================================================== */
 	body {
 		background: #fff;
-		font: 14px/21px 'Source Sans Pro', sans-serif;
+		font: 14px/21px 'Open Sans', sans-serif;
 		color: #656565;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
@@ -146,7 +146,7 @@
 		border: 1px solid #ccc;
 		padding: 6px 4px;
 		outline: none;
-		font: 13px 'Source Sans Pro', sans-serif;
+		font: 13px 'Open Sans', sans-serif;
 		color: #fff;
 		margin: 0;
 		width: 210px;
@@ -188,7 +188,9 @@
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
 	.green { color: #abcb00; }
-
+	
+	.margin-top-0 { margin-top: 0; }
+	.padding-top-30px { padding-top: 30px; }
 
 
 /* ------------ */
@@ -761,7 +763,7 @@ h2 {
 	color: #656565;
 	text-transform: uppercase;
 	text-align: center;
-	margin-top: 90px;
+	margin-top: 40px;
 	margin-bottom: 20px;
 }
 
@@ -895,8 +897,8 @@ input::-moz-focus-inner {
 ================================================== */
 
 .action {
-	margin-top: 50px;
-	padding: 40px 0 20px 0;
+	margin-top: 20px;
+	padding: 40px 0 0;
 	text-align: center;
 	border-top: 1px solid #d3d3d3;
 }
@@ -1009,11 +1011,12 @@ nav ul li:first-child {
 
 nav a {
 	font-family: 'Open Sans', sans-serif;;
-	font-size: 16px;
+	font-size: 14px;
 	color: #515151;
-	font-weight: 300;
+	font-weight: 400;
 	text-decoration: none;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 nav a:visited {
@@ -1102,7 +1105,7 @@ nav a:hover {
 	position: relative;
 	z-index: 300;
 	padding-top: 20px;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 	-webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
 }
@@ -1116,9 +1119,13 @@ nav a:hover {
 	position: relative;
 	z-index: 300;
 	padding-top: 20px;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 	-webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+#work h2 {
+	margin-top: 0;
 }
 
 .flexslider {
@@ -1134,8 +1141,13 @@ p.mid-text {
 	margin-top: 40px;
 }
 
+.portfolio .one-third.column:nth-child(3n+1){
+	clear: left;
+}
+
+
 p.proj-title {
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	padding-bottom: 2px;
 	border-bottom: 1px solid #d3d3d3;
 	text-transform: uppercase;
@@ -1156,19 +1168,19 @@ p.proj-desc {
 #services {
 	position: relative;
 	z-index: 300;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	-webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .serv-list {
 	text-align: center;
-	margin-top: 60px;
+	margin-top: 20px;
 }
 
 .serv-list h4 {
-	margin-bottom: 50px;
+	margin-bottom: 18px;
 }
 
 .serv-list p {
@@ -1182,8 +1194,8 @@ p.proj-desc {
 }
 
 .pricing h3 {
-	margin-top: 70px;
-	margin-bottom: 60px;
+	margin-top: 35px;
+	margin-bottom: 20px;
 }
 
 p.p-name {
@@ -1244,10 +1256,14 @@ span.p-small {
 	background: #fff;
 	position: relative;
 	z-index: 300;
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	-webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+#about h2{
+	margin-top: 0;
 }
 
 
@@ -1257,7 +1273,8 @@ span.p-small {
 
 .skills h3 {
 	text-align: center;
-	margin-bottom: 30px;
+	margin-top: 28px;
+	margin-bottom: 0;
 }
 
 .skills p {
