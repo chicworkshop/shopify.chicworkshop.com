@@ -211,6 +211,50 @@
         "swipe_on_mobile": false
       }
     },
+    "1631098012e1d0f3d3": {
+      "type": "image-banner",
+      "blocks": {
+        "1631098012e1d0f3d3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "SHOPIFY EXPERT",
+            "heading_size": "medium"
+          }
+        },
+        "1631098012e1d0f3d3-1": {
+          "type": "text",
+          "settings": {
+            "text": "WITH HIGH RATINGS"
+          }
+        },
+        "1631098012e1d0f3d3-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "LEARN MORE",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "1631098012e1d0f3d3-0",
+        "1631098012e1d0f3d3-1",
+        "1631098012e1d0f3d3-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/img-shopify-expert-profile.png",
+        "adapt_height_first_image": false,
+        "desktop_text_box_position": "center",
+        "show_text_box": false,
+        "image_overlay_opacity": 60,
+        "color_scheme": "background-1",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "1631098005d7f83f2d": {
       "type": "image-banner",
       "blocks": {
@@ -265,6 +309,7 @@
     "163109605224ec97b7",
     "16310972641b4812f2",
     "163109742282f9900e",
+    "1631098012e1d0f3d3",
     "1631098005d7f83f2d"
   ]
 }
