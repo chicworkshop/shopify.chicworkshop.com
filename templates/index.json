@@ -166,6 +166,50 @@
         "stack_images_on_mobile": true,
         "show_text_below": false
       }
+    },
+    "163109742282f9900e": {
+      "type": "multicolumn",
+      "blocks": {
+        "163109742282f9900e-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icn-serv-icon4-min.png",
+            "title": "Setup",
+            "text": ""
+          }
+        },
+        "163109742282f9900e-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icn-serv-icon1-min.png",
+            "title": "Design",
+            "text": ""
+          }
+        },
+        "163109742282f9900e-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/icn-serv-icon2-min.png",
+            "title": "Development",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "163109742282f9900e-0",
+        "163109742282f9900e-1",
+        "163109742282f9900e-2"
+      ],
+      "settings": {
+        "title": "Services",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false
+      }
     }
   },
   "order": [
@@ -175,6 +219,7 @@
     "16310955756aa6a55f",
     "16310960498c1abb93",
     "163109605224ec97b7",
-    "16310972641b4812f2"
+    "16310972641b4812f2",
+    "163109742282f9900e"
   ]
 }
