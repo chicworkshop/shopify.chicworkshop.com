@@ -141,6 +141,31 @@
       "settings": {
         "custom_liquid": "<p class=\"center\">\n                           <a href=\"https:\/\/experts.shopify.com\/chicworkshop?ref=chicworkshop\" target=\"_blank\" title=\"Shopify Experts\" style=\"margin: 0 20px\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/1405\/4918\/files\/badge-shopify-experts-for-light-background_x24.png?5806940831776501261\" alt=\"Shopify Experts\"><\/a>\n                          \n                           <a href=\"https:\/\/www.paypal.com\/hk\/webapps\/mpp\/referral\/paypal-business-account?partner_id=LGJ9ABQFNPE7S\" target=\"_blank\" title=\"PayPal Partner\" style=\"margin: 0 20px\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/1405\/4918\/files\/badge-paypal-partner-h_x22.png?5806940831776501261\" alt=\"PayPal Partner\"><\/a>\n                        <\/p>"
       }
+    },
+    "16310972641b4812f2": {
+      "type": "image-banner",
+      "blocks": {
+        "16310972641b4812f2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "GETTING YOUR ONLINE STORE READY FOR BUSINESS",
+            "heading_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "16310972641b4812f2-0"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/black-friday-online-store.jpg",
+        "adapt_height_first_image": false,
+        "desktop_text_box_position": "center",
+        "show_text_box": false,
+        "image_overlay_opacity": 50,
+        "color_scheme": "background-1",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
     }
   },
   "order": [
@@ -149,6 +174,7 @@
     "16310927462c79cc6c",
     "16310955756aa6a55f",
     "16310960498c1abb93",
-    "163109605224ec97b7"
+    "163109605224ec97b7",
+    "16310972641b4812f2"
   ]
 }
