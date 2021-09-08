@@ -157,7 +157,7 @@
         "16310972641b4812f2-0"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/black-friday-online-store.jpg",
+        "image": "shopify:\/\/shop_images\/img-iStock-508218404_tone_2.jpg",
         "adapt_height_first_image": false,
         "desktop_text_box_position": "center",
         "show_text_box": false,
@@ -217,7 +217,7 @@
         "1631098012e1d0f3d3-0": {
           "type": "heading",
           "settings": {
-            "heading": "SHOPIFY EXPERT",
+            "heading": "SHOPIFY EXPERT SINCE 2012",
             "heading_size": "medium"
           }
         },
@@ -249,7 +249,7 @@
         "adapt_height_first_image": false,
         "desktop_text_box_position": "center",
         "show_text_box": false,
-        "image_overlay_opacity": 60,
+        "image_overlay_opacity": 70,
         "color_scheme": "background-1",
         "stack_images_on_mobile": true,
         "show_text_below": true
@@ -257,6 +257,7 @@
     },
     "1631098005d7f83f2d": {
       "type": "image-banner",
+      "disabled": true,
       "blocks": {
         "1631098005d7f83f2d-0": {
           "type": "heading",
