@@ -50,29 +50,20 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Shopify",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
+            "text": "<p>USE SHOPIFY TO CREATE YOUR ONLINE STORE<br\/>EVERYTHING YOU NEED TO START SELLING ONLINE<br\/>                        <\/p><p><a href=\"http:\/\/www.chicworkshop.com\/\" title=\"Chic Workshop 網頁設計工作室, Shopify Expert, 香港\">Chic Workshop<\/a> is a Shopify Expert in Hong Kong, we provide setup, design, development and support services to <a href=\"https:\/\/www.shopify.com\/?ref=chicworkshop\">Shopify<\/a> stores.<\/p><p><br\/>                     <\/p>"
           }
         }
       },
       "block_order": [
         "heading",
-        "text",
-        "button"
+        "text"
       ],
       "settings": {
         "color_scheme": "background-1",
