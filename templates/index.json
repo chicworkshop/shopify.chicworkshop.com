@@ -210,6 +210,50 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
+    },
+    "1631098005d7f83f2d": {
+      "type": "image-banner",
+      "blocks": {
+        "1631098005d7f83f2d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "SHOPIFY",
+            "heading_size": "medium"
+          }
+        },
+        "3a4ac652-9988-4dac-8560-a9e5f511e1ba": {
+          "type": "text",
+          "settings": {
+            "text": "Everything you need to run a professional ecommerce business"
+          }
+        },
+        "60660284-0baa-43c7-a639-209528382004": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "LEARN MORE",
+            "button_link_1": "https:\/\/www.chicworkshop.com\/pages\/shopify-ecommerce-platform",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "1631098005d7f83f2d-0",
+        "3a4ac652-9988-4dac-8560-a9e5f511e1ba",
+        "60660284-0baa-43c7-a639-209528382004"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/img-iStock-508218404_tone_2.jpg",
+        "adapt_height_first_image": false,
+        "desktop_text_box_position": "center",
+        "show_text_box": false,
+        "image_overlay_opacity": 20,
+        "color_scheme": "background-1",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
     }
   },
   "order": [
@@ -220,6 +264,7 @@
     "16310960498c1abb93",
     "163109605224ec97b7",
     "16310972641b4812f2",
-    "163109742282f9900e"
+    "163109742282f9900e",
+    "1631098005d7f83f2d"
   ]
 }
