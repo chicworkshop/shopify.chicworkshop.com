@@ -116,11 +116,20 @@
           "settings": {
             "text": "<p><a href=\"https:\/\/www.chicworkshop.com\/\">Chic Workshop<\/a> is a Shopify Expert, web design studio founded in 2006 Hong Kong by a small group of professional with passion on what they do. We believe in quality over quantity. We specialise in creating attractive design, mobile optimised, friendly user experience and search engines optimised <a href=\"https:\/\/www.shopify.com\/?ref=chicworkshop\">Shopify<\/a> stores. In addition, we also provide full creative, design and development services.       <\/p>"
           }
+        },
+        "108c4302-1587-4f1b-988b-a80ea317c55e": {
+          "type": "button",
+          "settings": {
+            "button_label": "CONTACT US",
+            "button_link": "https:\/\/www.chicworkshop.com\/pages\/contact-us",
+            "button_style_secondary": false
+          }
         }
       },
       "block_order": [
         "16310960498c1abb93-0",
-        "16310960498c1abb93-1"
+        "16310960498c1abb93-1",
+        "108c4302-1587-4f1b-988b-a80ea317c55e"
       ],
       "settings": {
         "color_scheme": "background-1",
