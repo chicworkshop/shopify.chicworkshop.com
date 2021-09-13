@@ -38,7 +38,7 @@
                       style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
                     {% endif %}>
                     {% if block.settings.link != blank %}
-                    <a href="{{ block.settings.link }}" class="media media--transparent media--{{ section.settings.image_ratio }}">
+                    <a href="{{ block.settings.link }}" class="media media--transparent media--{{ section.settings.image_ratio }}" {% if block.settings.link contains 'http'%}target="_blank"{% endif %}>
                       {% endif %}
                     <img
                       srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | img_url: '275x' }} 275w,{%- endif -%}
