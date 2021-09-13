@@ -395,6 +395,15 @@
             "text": "",
             "link": "http:\/\/www.thomas-earnshaw.com\/"
           }
+        },
+        "78e63201-cc5c-4ae3-a816-46951b8cf9f7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/thumb_mischadesigns-min.jpg",
+            "title": "MISCHA",
+            "text": "",
+            "link": "https:\/\/www.mischadesigns.com\/"
+          }
         }
       },
       "block_order": [
@@ -407,7 +416,8 @@
         "d7a624e0-65a1-46c8-b349-4125b9ea4b27",
         "467aa349-b608-4641-9937-7fee24f88a34",
         "bef800ad-58b9-4a49-a1f7-e2c239320020",
-        "bcbdffe0-5a60-45f4-b966-66317c82535f"
+        "bcbdffe0-5a60-45f4-b966-66317c82535f",
+        "78e63201-cc5c-4ae3-a816-46951b8cf9f7"
       ],
       "settings": {
         "title": "Shopify Projects",
