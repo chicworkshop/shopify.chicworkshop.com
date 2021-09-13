@@ -389,7 +389,7 @@
         </ul>
       </nav>
     {%- endif -%}
-
+        {% comment %}
     <div class="header__icons">
       <details-modal class="header__search">
         <details>
@@ -498,6 +498,7 @@
         {%- endif -%}
       </a>
     </div>
+            {% endcomment %}
   </header>
 </{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
 
