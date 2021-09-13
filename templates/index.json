@@ -354,9 +354,10 @@
         "032b7d0d-9bea-4275-b8f5-24e0e995e618": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/thumb_mintescape-min.jpg",
+            "title": "Mint Escape",
+            "text": "",
+            "link": "https:\/\/www.mintescape.com\/"
           }
         },
         "d7a624e0-65a1-46c8-b349-4125b9ea4b27": {
