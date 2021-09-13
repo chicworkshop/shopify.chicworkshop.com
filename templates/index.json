@@ -330,15 +330,16 @@
             "image": "shopify:\/\/shop_images\/thumb_cl-mall-min.jpg",
             "title": "Contact Lens Mall",
             "text": "",
-            "link": ""
+            "link": "https:\/\/www.cl-mall.com\/"
           }
         },
         "40044e99-a765-4d2e-9b02-918082645ccd": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/thumb_candies-gifts-min.jpg",
+            "title": "Candies Gifts",
+            "text": "",
+            "link": "https:\/\/www.candies-gifts.com\/"
           }
         },
         "dfae25be-9410-4c24-a214-67a97ecadfa6": {
