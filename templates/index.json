@@ -381,9 +381,10 @@
         "bef800ad-58b9-4a49-a1f7-e2c239320020": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/thumb_outofstock-min.jpg",
+            "title": "Out Of Stock",
+            "text": "",
+            "link": "https:\/\/store.outofstock.com.hk\/"
           }
         }
       },
