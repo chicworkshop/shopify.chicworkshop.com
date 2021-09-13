@@ -422,6 +422,15 @@
             "text": "",
             "link": ""
           }
+        },
+        "0bc7f19e-5729-4a00-8050-961d1ed88153": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/thumb_surlaplage-min.jpg",
+            "title": "Surlaplage",
+            "text": "",
+            "link": "https:\/\/www.surlaplage.co\/"
+          }
         }
       },
       "block_order": [
@@ -437,7 +446,8 @@
         "bcbdffe0-5a60-45f4-b966-66317c82535f",
         "78e63201-cc5c-4ae3-a816-46951b8cf9f7",
         "bf6101e6-be0e-4cdc-91c9-e73a1677744e",
-        "42ff98bd-c860-4a1e-a1ee-e0d499b1304e"
+        "42ff98bd-c860-4a1e-a1ee-e0d499b1304e",
+        "0bc7f19e-5729-4a00-8050-961d1ed88153"
       ],
       "settings": {
         "title": "Shopify Projects",
