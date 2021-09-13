@@ -372,9 +372,10 @@
         "467aa349-b608-4641-9937-7fee24f88a34": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/thumb_spinnaker-watches-2016-min.jpg",
+            "title": "Spinnaker Watches 2016",
+            "text": "",
+            "link": "http:\/\/www.spinnaker-watches.com\/"
           }
         },
         "bef800ad-58b9-4a49-a1f7-e2c239320020": {
