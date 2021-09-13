@@ -386,6 +386,15 @@
             "text": "",
             "link": "https:\/\/store.outofstock.com.hk\/"
           }
+        },
+        "bcbdffe0-5a60-45f4-b966-66317c82535f": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/thumb_thomas-earnshaw-2016-min.jpg",
+            "title": "Thomas Earnshaw 2016",
+            "text": "",
+            "link": "http:\/\/www.thomas-earnshaw.com\/"
+          }
         }
       },
       "block_order": [
@@ -397,7 +406,8 @@
         "032b7d0d-9bea-4275-b8f5-24e0e995e618",
         "d7a624e0-65a1-46c8-b349-4125b9ea4b27",
         "467aa349-b608-4641-9937-7fee24f88a34",
-        "bef800ad-58b9-4a49-a1f7-e2c239320020"
+        "bef800ad-58b9-4a49-a1f7-e2c239320020",
+        "bcbdffe0-5a60-45f4-b966-66317c82535f"
       ],
       "settings": {
         "title": "Shopify Projects",
