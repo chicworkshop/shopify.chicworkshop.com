@@ -431,6 +431,15 @@
             "text": "",
             "link": "https:\/\/www.surlaplage.co\/"
           }
+        },
+        "6a8fed91-5f29-4724-b5c5-b6f5718c28fc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/thumb_tinybitz-2016-min.jpg",
+            "title": "Tiny Bitz 2016",
+            "text": "",
+            "link": "https:\/\/www.tinybitz.com\/"
+          }
         }
       },
       "block_order": [
@@ -447,7 +456,8 @@
         "78e63201-cc5c-4ae3-a816-46951b8cf9f7",
         "bf6101e6-be0e-4cdc-91c9-e73a1677744e",
         "42ff98bd-c860-4a1e-a1ee-e0d499b1304e",
-        "0bc7f19e-5729-4a00-8050-961d1ed88153"
+        "0bc7f19e-5729-4a00-8050-961d1ed88153",
+        "6a8fed91-5f29-4724-b5c5-b6f5718c28fc"
       ],
       "settings": {
         "title": "Shopify Projects",
