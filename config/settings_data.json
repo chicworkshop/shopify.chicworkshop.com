@@ -50,17 +50,17 @@
               "menu": "footer"
             }
           },
-          "footer-1": {
-            "type": "text",
+          "224fa71d-5e5f-4d29-bbee-1d3298eeaf00": {
+            "type": "link_list",
             "settings": {
-              "heading": "Heading",
-              "subtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
+              "heading": "Our partners",
+              "menu": "our-partners"
             }
           }
         },
         "block_order": [
           "footer-0",
-          "footer-1"
+          "224fa71d-5e5f-4d29-bbee-1d3298eeaf00"
         ],
         "settings": {
           "color_scheme": "background-1",
