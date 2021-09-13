@@ -312,15 +312,15 @@
             "image": "shopify:\/\/shop_images\/thumb_redearth-min.jpg",
             "title": "Red Earth",
             "text": "",
-            "link": ""
+            "link": "shopify:\/\/collections\/all"
           }
         },
         "16310982574dd08796-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/img-iStock-508218404_tone_2.jpg",
+            "image": "shopify:\/\/shop_images\/thumb_coffeecamps-min.jpg",
             "title": "Coffee Camps",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "",
             "link": "https:\/\/www.coffeecamps.com\/"
           }
         },
