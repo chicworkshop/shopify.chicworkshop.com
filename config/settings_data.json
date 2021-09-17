@@ -9,6 +9,7 @@
     "colors_background_2": "#F3F3F3",
     "type_header_font": "josefin_sans_n3",
     "type_body_font": "open_sans_n4",
+    "favicon": "shopify:\/\/shop_images\/chic-workshop-logo-2017-square-green-min.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
