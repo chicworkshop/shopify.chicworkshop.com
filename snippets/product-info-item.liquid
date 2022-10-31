@@ -1,0 +1,51 @@
+<!-- /snippets/product-info-item.liquid -->
+
+<div class="product-item">
+  <a href="{{ product.url | default: '#' }}" style="background-image:  url('{{ product.featured_media.preview_image | img_url: '1x1' }}');" аria-label="{{ product.title | strip_html | escape }}">
+    {% if product.featured_media.preview_image != blank %}
+      <div class="lazyload fade-in product-item__image"
+        data-bgset="{% render 'bgset', image: product.featured_media.preview_image %}"
+        role="img"
+        aria-label="{{ product.featured_media.alt | default: product.title | strip_html | escape }}"></div>
+    {% elsif product.title != blank and product.featured_media.preview_image == blank %}
+      <div class="product-no-image"></div>
+    {% else %}
+      <div class="product-item__image">
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {% endif %}
+  </a>
+
+  <noscript>
+    <a href="{{ product.url | default: '#' }}">
+      <img src="{{ product.featured_media.preview_image | img_url: '360x' }}" alt="{{ product.featured_media.alt | default: product.title | strip_html | escape }}">
+    </a>
+  </noscript>
+
+  <div class="product-item__content">
+    <p class="product-item__title">{{ product.title | default: 'Nomad X Sunglasses' }}</p>
+
+    <p class="product-item__price">
+      {% if product.price_varies and product.price_varies != '' %}
+        {{ 'products.general.from' | t }}
+      {% endif %}
+
+      {% if product.title != blank %}
+        {% if settings.currency_code_enable %}
+          {{ product.price | money_with_currency }}
+        {% else %}
+          {{ product.price | money }}
+        {% endif %}
+      {% else %}
+        {% if settings.currency_code_enable %}
+          {{ 1999 | money_with_currency }}
+        {% else %}
+          {{ 1999 | money }}
+        {% endif %}
+      {% endif %}
+
+    </p>
+
+    <a href="{{ product.url | default: '#' }}" class="product-item__link">{{ 'products.general.view_details' | t }}</a>
+  </div>
+</div>

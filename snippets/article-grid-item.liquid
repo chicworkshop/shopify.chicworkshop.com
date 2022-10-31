@@ -1,0 +1,69 @@
+<!-- /snippets/article-grid-item.liquid -->
+
+{% comment %}
+  * An article block that fills the container with an image with overlayed title
+  {% render 'article-grid-item', article: article, aspect_ratio: section.settings.aspect_ratio, show_author: section.settings.show_author, show_preview: section.settings.show_preview, show_link: section.settings.show_link %}
+{% endcomment %}
+
+<div class="article__item">
+  <div class="article__item-image" data-grid-slide>
+    {% if article.image %}
+      <a href="{{ article.url }}">
+        {%- render 'image-fill', img_object: article.image, aspect_ratio: aspect_ratio, alt_default: article.title -%}
+      </a>
+    {% else %}
+      <div class="image__fill" style="padding-top: {{ aspect_ratio | times: 100 }}%; background: var(--muted);"></div>
+    {% endif %}
+  </div>
+
+  <div class="article__item-content">
+    {% assign has_tags = false %}
+    {% if article.tags.size > 0 and show_tags %}
+      {% assign has_tags = true %}
+    {% endif %}
+
+    {% if has_tags or show_date %}
+      <div class="article__item-meta">
+        {% if has_tags %}
+          {% for tag in article.tags %}
+            <span class="article__item-tag">{{tag}}</span>
+          {% endfor %}
+        {% endif %}
+
+        {% if show_date %}
+          <span class="article__item-date">
+            <time>{{ article.published_at | date: format: 'month_day_year' }}</time>
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <h3 class="article__item-title h5 mb0">
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+
+    {% if show_author %}
+      <div class="article__item-author">
+        {% if article.user.image %}
+          <span class="article__item-avatar">
+            <img src="{{ article.user.image | img_url: 'master' }}" alt="{{ article.author }}">
+          </span>
+        {% endif %}
+
+        <span>
+          {{ 'blogs.article.by' | t }} {{ article.author }}
+        </span>
+      </div>
+    {% endif %}
+
+    {% if show_preview %}
+      <div class="rte--column">
+        <p>{{ article.content | strip_html | truncatewords: 25 }}</p>
+      </div>
+    {% endif %}
+
+    {% if show_link %}
+      <a href="{{ article.url }}" class="text-link">{{ 'blogs.article.read_more' | t }}</a>
+    {% endif %}
+  </div>
+</div>

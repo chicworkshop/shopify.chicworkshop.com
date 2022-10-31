@@ -1,174 +1,274 @@
 <!doctype html>
-<html class="no-js" lang="{{ request.locale.iso_code }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="">
+{% capture rtl_codes %},ar,arc,ckb,dv,fa,ha,he,khw,ks,ps,sd,ur,uz_AF,yi,{% endcapture %}
+{% assign is_code_separator = request.locale.iso_code | append: ',' | prepend: ',' %}
+{% assign is_rtl =  nil %}
+{% if rtl_codes contains is_code_separator %}
+  {% assign is_rtl =  true %}
+{% endif %}
+<html class="no-js" lang="{{ request.locale.iso_code }}" {% if is_rtl %} dir="rtl"{% endif %}>
+
+{%- assign title_override = false -%}
+{%- assign default_description = false -%}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="{{ settings.color_secondary }}">
+  {%- if canonical_url != blank -%}
     <link rel="canonical" href="{{ canonical_url }}">
-    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  {%- endif -%}
 
-    {%- if settings.favicon != blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
-    {%- endif -%}
+  <!-- ======================= Pipeline Theme V6.3.0 ========================= -->
 
-    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-    {%- endunless -%}
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://monorail-edge.shopifysvc.com" crossorigin>
 
-    <title>
-      {{ page_title }}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-    </title>
 
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
+  <link rel="preload" href="{{ 'lazysizes.js' | asset_url }}" as="script">
+  <link rel="preload" href="{{ 'vendor.js' | asset_url }}" as="script">
+  <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
+  <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style">
+
+  {% if product.featured_media.preview_image %}
+    {%- assign media = product.featured_media -%}
+    <link rel="preload" as="image"
+      href="{{ media.preview_image | img_url: '550' }}"
+      imagesrcset="{%- if media.preview_image.width >= 550 -%}{{ media.preview_image | img_url: '550x' }} 550w,{%- endif -%}
+              {%- if media.preview_image.width >= 1100 -%}{{ media.preview_image | img_url: '1100x' }} 1100w,{%- endif -%}
+              {%- if media.preview_image.width >= 1680 -%}{{ media.preview_image | img_url: '1680x' }} 1680w,{%- endif -%}
+              {%- if media.preview_image.width >= 2048 -%}{{ media.preview_image | img_url: '2048x' }} 2048w,{%- endif -%}
+              {%- if media.preview_image.width >= 4096 -%}{{ media.preview_image | img_url: '4096x' }} 4096w
+              {%- else -%}{{ media.preview_image | img_url: 'master' }} {{ media.preview_image.width | append: 'w' }}{%- endif -%}"
+      imagesizes="(min-width: 768px), 50vw,
+             100vw">
+  {% endif %}
+
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {%- else -%}
+    <link rel="shortcut icon" href="data:;base64,iVBORw0KGgo=">
+  {%- endif -%}
+
+  <!-- Title and description ================================================ -->
+  {% capture seo_title %}
+    {%- assign title_content = page_title -%}
+    {% if title_override %}
+      {%- assign title_content = title_override -%}
     {% endif %}
-
-    {% render 'meta-tags' %}
-
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    {{ content_for_header }}
-
-    {%- liquid
-      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
-      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
-      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
-    %}
-
-    {% style %}
-      {{ settings.type_body_font | font_face: font_display: 'swap' }}
-      {{ body_font_bold | font_face: font_display: 'swap' }}
-      {{ body_font_italic | font_face: font_display: 'swap' }}
-      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
-      {{ settings.type_header_font | font_face: font_display: 'swap' }}
-
-      :root {
-        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
-        --font-body-style: {{ settings.type_body_font.style }};
-        --font-body-weight: {{ settings.type_body_font.weight }};
-
-        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
-        --font-heading-style: {{ settings.type_header_font.style }};
-        --font-heading-weight: {{ settings.type_header_font.weight }};
-
-        --color-base-text: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
-        --color-base-background-1: {{ settings.colors_background_1.red }}, {{ settings.colors_background_1.green }}, {{ settings.colors_background_1.blue }};
-        --color-base-background-2: {{ settings.colors_background_2.red }}, {{ settings.colors_background_2.green }}, {{ settings.colors_background_2.blue }};
-        --color-base-solid-button-labels: {{ settings.colors_solid_button_labels.red }}, {{ settings.colors_solid_button_labels.green }}, {{ settings.colors_solid_button_labels.blue }};
-        --color-base-outline-button-labels: {{ settings.colors_outline_button_labels.red }}, {{ settings.colors_outline_button_labels.green }}, {{ settings.colors_outline_button_labels.blue }};
-        --color-base-accent-1: {{ settings.colors_accent_1.red }}, {{ settings.colors_accent_1.green }}, {{ settings.colors_accent_1.blue }};
-        --color-base-accent-2: {{ settings.colors_accent_2.red }}, {{ settings.colors_accent_2.green }}, {{ settings.colors_accent_2.blue }};
-        --payment-terms-background-color: {{ settings.colors_background_1 }};
-
-        --gradient-base-background-1: {% if settings.gradient_background_1 != blank %}{{ settings.gradient_background_1 }}{% else %}{{ settings.colors_background_1 }}{% endif %};
-        --gradient-base-background-2: {% if settings.gradient_background_2 != blank %}{{ settings.gradient_background_2 }}{% else %}{{ settings.colors_background_2 }}{% endif %};
-        --gradient-base-accent-1: {% if settings.gradient_accent_1 != blank %}{{ settings.gradient_accent_1 }}{% else %}{{ settings.colors_accent_1 }}{% endif %};
-        --gradient-base-accent-2: {% if settings.gradient_accent_2 != blank %}{{ settings.gradient_accent_2 }}{% else %}{{ settings.colors_accent_2 }}{% endif %};
-
-        --page-width: {{ settings.page_width | divided_by: 10 }}rem;
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: inherit;
-      }
-
-      html {
-        box-sizing: border-box;
-        font-size: 62.5%;
-        height: 100%;
-      }
-
-      body {
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-columns: 100%;
-        min-height: 100%;
-        margin: 0;
-        font-size: 1.5rem;
-        letter-spacing: 0.06rem;
-        line-height: 1.8;
-        font-family: var(--font-body-family);
-        font-style: var(--font-body-style);
-        font-weight: var(--font-body-weight);
-      }
-
-      @media screen and (min-width: 750px) {
-        body {
-          font-size: 1.6rem;
-        }
-      }
-    {% endstyle %}
-
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-
-    {%- unless settings.type_body_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
-    {%- endunless -%}
-    {%- unless settings.type_header_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
-    {%- endunless -%}
-
-    {%- if settings.predictive_search_enabled -%}
-      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
-    {%- endif -%} 
-
-    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
-  </head>
-
-  <body class="gradient">
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-      {{ "accessibility.skip_to_text" | t }}
-    </a>
-
-    {% section 'announcement-bar' %}
-    {% section 'header' %}
-
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
-
-    {% section 'footer' %}
-
-    <ul hidden>
-      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
-    </ul>
-
-    <script>
-      window.routes = {
-        cart_add_url: '{{ routes.cart_add_url }}',
-        cart_change_url: '{{ routes.cart_change_url }}',
-        cart_update_url: '{{ routes.cart_update_url }}',
-        predictive_search_url: '{{ routes.predictive_search_url }}'
-      };
-
-      window.cartStrings = {
-        error: `{{ 'sections.cart.cart_error' | t }}`,
-        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t }}`
-      }
-
-      window.variantStrings = {
-        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
-        soldOut: `{{ 'products.product.sold_out' | t }}`,
-        unavailable: `{{ 'products.product.unavailable' | t }}`,
-      }
-
-      window.accessibilityStrings = {
-        shareSuccess: `{{ 'general.share.success_message' | t }}`,
-      }
-    </script>
-    
-    {%- if settings.predictive_search_enabled -%}
-      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {{ title_content }}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}
     {%- endif -%}
-  
-<!-- **BEGIN** Hextom TMS Translator // Main Include - DO NOT MODIFY -->
-    <script src="{{ 'tms-translator.js' | asset_url }}" defer="defer"></script>
-    <!-- **END** Hextom TMS Translator // Main Include - DO NOT MODIFY -->
-        
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign title_downcase = title_content | downcase | strip -%}
+    {%- assign name_downcase = shop.name | downcase | strip -%}
+    {%- unless title_downcase contains name_downcase -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  {% endcapture %}
+  <title>
+    {{ seo_title }}
+  </title>
+
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% elsif default_description %}
+    <meta name="description" content="{{ default_description | escape }}">
+  {%- endif -%}
+
+  {%- render 'social-meta-tags' -%}
+
+  <!-- CSS ================================================================== -->
+
+  {{ 'font-settings.css' | asset_url | stylesheet_tag }}
+
+  {% render 'css-variables' %}
+
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    {% if settings.animations_scroll_enable %}
+      document.documentElement.classList.add('aos-initialized');
+    {%- endif -%}
+
+    let root = '{{ routes.root_url }}';
+    if (root[root.length - 1] !== '/') {
+      root = `${root}/`;
+    }
+    var theme = {
+      routes: {
+        root_url: root,
+        cart: '{{ routes.cart_url }}',
+        cart_add_url: '{{ routes.cart_add_url }}',
+        product_recommendations_url: '{{ routes.product_recommendations_url }}',
+        account_addresses_url: '{{ routes.account_addresses_url }}'
+      },
+      assets: {
+        photoswipe: '{{ "photoswipe.js" | asset_url }}',
+        smoothscroll: '{{ "smoothscroll.js" | asset_url }}',
+        swatches: '{{ "swatches.json" | asset_url }}',
+        noImage: '{{ "nil" | img_url: "master" }}',
+        base: '{{ "nil.jpg" | asset_url | split: "nil.jpg" | first }}'
+      },
+      strings: {
+        swatchesKey: {{ 'general.swatches.color' | t | json }},
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        estimateShipping: {{ 'cart.shipping.estimate_shipping' | t | json }},
+        noShippingAvailable: {{ 'cart.shipping.no_shipping_available' | t | json }},
+        free: {{ 'cart.shipping.free' | t | json }},
+        from: {{ 'products.general.from' | t | json }},
+        preOrder: {{ 'products.product.pre_order' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        sale: {{ 'products.product.sale' | t | json }},
+        subscription: {{ 'products.product.subscription' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        unitPrice: {{ 'products.product.unit_price_label' | t | json }},
+        unitPriceSeparator: {{ 'general.accessibility.unit_price_separator' | t | json }},
+        stockout: {{ 'cart.general.stockout' | t | json }},
+        products: {{ 'products.general.products' | t | json }},
+        pages: {{ 'general.page.pages' | t | json }},
+        collections: {{ 'collections.sidebar.collections' | t | json }},
+        resultsFor: {{ 'general.search.results_for' | t | json }},
+        noResultsFor: {{ 'general.search.no_results_for' | t | json }},
+        articles: {{ 'blogs.article.articles' | t | json }},
+        successMessage: {{ 'general.share.success_message' | t | json }},
+      },
+      settings: {
+        badge_sale_type: {{ settings.badge_sale_type | json }},
+        search_products: {{ settings.search_products | json }},
+        search_collections: {{ settings.search_collections | json }},
+        search_pages: {{ settings.search_pages | json }},
+        search_articles: {{ settings.search_articles | json }},
+        animate_hover: {{ settings.animations_hover_enable | json }},
+        animate_scroll: {{ settings.animations_scroll_enable | json }},
+        show_locale_desktop: {{ settings.show_locale_desktop | json }},
+        show_locale_mobile: {{ settings.show_locale_mobile | json }},
+        show_currency_desktop: {{ settings.show_currency_desktop | json }},
+        show_currency_mobile: {{ settings.show_currency_mobile | json }},
+        currency_select_type: {{ settings.currency_select_type | json }},
+        currency_code_enable: {{ settings.currency_code_enable | json }},
+        excluded_collections_strict: {{ settings.exclude_collections_strict | split: ',' | json }},
+        excluded_collections: {{ settings.exclude_collections_contain | split: ',' | json }}
+      },
+      info: {
+        name: 'pipeline'
+      },
+      version: '6.3.0',
+      moneyFormat: {{ shop.money_format | json }},
+      shopCurrency: {{ shop.currency | json }},
+      currencyCode: {{ cart.currency.iso_code | json }}
+    }
+    let windowInnerHeight = window.innerHeight;
+    document.documentElement.style.setProperty('--full-screen', `${windowInnerHeight}px`);
+    document.documentElement.style.setProperty('--three-quarters', `${windowInnerHeight * 0.75}px`);
+    document.documentElement.style.setProperty('--two-thirds', `${windowInnerHeight * 0.66}px`);
+    document.documentElement.style.setProperty('--one-half', `${windowInnerHeight * 0.5}px`);
+    document.documentElement.style.setProperty('--one-third', `${windowInnerHeight * 0.33}px`);
+    document.documentElement.style.setProperty('--one-fifth', `${windowInnerHeight * 0.2}px`);
+
+    window.lazySizesConfig = window.lazySizesConfig || {};
+    window.lazySizesConfig.loadHidden = false;
+    window.isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+  </script>
+
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+  <!-- Theme Javascript ============================================================== -->
+  <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
+  <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  <script>
+    (function () {
+      function onPageShowEvents() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(initCartEvent, { timeout: 500 })
+        } else {
+          initCartEvent()
+        }
+        function initCartEvent(){
+          window.fetch(window.theme.routes.cart + '.js')
+          .then((response) => {
+            if(!response.ok){
+              throw {status: response.statusText};
+            }
+            return response.json();
+          })
+          .then((response) => {
+            document.dispatchEvent(new CustomEvent('theme:cart:change', {
+              detail: {
+                cart: response,
+              },
+              bubbles: true,
+            }));
+            return response;
+          })
+          .catch((e) => {
+            console.error(e);
+          });
+        }
+      };
+      window.onpageshow = onPageShowEvents;
+    })();
+  </script>
+
+  <script type="text/javascript">
+    if (window.MSInputMethodContext && document.documentMode) {
+      var scripts = document.getElementsByTagName('script')[0];
+      var polyfill = document.createElement("script");
+      polyfill.defer = true;
+      polyfill.src = "{{ 'ie11.js' | asset_url }}";
+
+      scripts.parentNode.insertBefore(polyfill, scripts);
+    }
+  </script>
+
+  <!-- Shopify app scripts =========================================================== -->
+  {{ content_for_header }}
+</head>
+
+
+<body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} {{ settings.default_background }}{% if customer %} customer-logged-in{% endif %}">
+
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  {% section 'announcement' %}
+  {% section 'header' %}
+
+  <main class="main-content" id="MainContent">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  {% section 'popups' %}
+
+  <div class="search--popdown">
+    {% render 'search-predictive', version: 'search-popdown' %}
+  </div>
+
+  {% render 'template-swatch' %}
+
+  <div data-modal-container></div>
+  <div data-upsell-container></div>
+
+  {%- comment -%}
+    In order to use your custom javascript file at assets/custom.js
+    just cut and paste this next line outside this comment.
+    <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+  {%- endcomment -%}
+
+  <!-- Paste popup code or third party scripts below this comment line ============== -->
+
+
+  <!-- And above this comment line ================================================== -->
+
 </body>
 </html>
